@@ -1,0 +1,9 @@
+[user]
+	name = David Abraham
+	email = david.abraham.1336@gmail.com
+	username = TheDriller
+[core]
+	editor = micro
+	
+[web]
+	browser = firefox

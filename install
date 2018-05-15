@@ -1,0 +1,42 @@
+#!/bin/bash
+
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Shells
+ln -s ${BASEDIR}/.bashrc ~/.bashrc
+ln -s ${BASEDIR}/.zshrc ~/.zshrc
+
+# xinit
+ln -s ${BASEDIR}/.xinitrc ~/.xinitrc
+
+# Git config
+ln -s ${BASEDIR}/.gitconfig ~/.gitconfig
+
+# Personnal bin
+ln -s ${BASEDIR}/.bin ~/
+
+# i3 config
+ln -s ${BASEDIR}/.i3 ~/
+
+# pip config
+ln -s ${BASEDIR}/.pip ~/
+
+# colorls config
+ln -s ${BASEDIR}/.config/colorls ~/.config/
+
+# dunst config
+ln -s ${BASEDIR}/.config/dunst ~/.config/
+
+# ranger config
+ln -s ${BASEDIR}/.config/ranger ~/.config/
+
+# rofi config
+ln -s ${BASEDIR}/.config/rofi ~/.config/
+
+# xfce4 terminal config
+mkdir ~/.config/xfce4
+ln -s ${BASEDIR}/.config/xfce4/terminal ~/.config/xfce4/
+
+# zathura config
+ln -s ${BASEDIR}/.config/zathura ~/.config/
+

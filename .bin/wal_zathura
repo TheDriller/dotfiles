@@ -1,0 +1,79 @@
+#!/usr/bin/python
+
+import json
+import argparse
+
+
+
+def read_colors(file_path):
+    with open(file_path + 'colors.json') as f:
+        colors = json.load(f)
+
+    return colors
+
+def set_zathura_theme(colors, path):
+    zathurarc = """
+set default-fg "{foreground}"
+set default-bg "{background}"
+
+set recolor-darkcolor  "{foreground}"
+set recolor-lightcolor "{background}"
+
+set statusbar-fg "{foreground}"
+set statusbar-bg "{background}"
+
+set inputbar-fg "{foreground}"
+set inputbar-bg "{background}"
+
+set completion-fg "{background}"
+set completion-bg "{foreground}"
+
+set completion-group-fg "{foreground}"
+set completion-group-bg "{background}"
+
+set completion-highlight-fg "{foreground}"
+set completion-highlight-bg "{background}"
+
+set highlight-color "{background}"
+set highlight-active-color "{foreground}"
+
+set notification-fg "{foreground}"
+set notification-bg "{background}"
+
+set notification-error-bg "{background}"
+set notification-error-fg "{foreground}"
+
+set notification-warning-bg "{background}"
+set notification-warning-fg "{foreground}"
+
+set recolor
+""".format(background=colors["colors"]["color0"], foreground=colors["colors"]["color4"])
+
+    with open(path + "zathurarc", 'w') as f:
+        f.write(zathurarc)
+
+def main():
+
+    # Get home of user
+    from pathlib import Path
+    home = str(Path.home())
+
+    # Create and parse arguments
+    parser = argparse.ArgumentParser(description='Theme multiple applications using generated pywal colors.')
+    parser.add_argument("-p", "--path", nargs="?", \
+                        default=home + "/.cache/wal/", \
+                        help="Path to pywal's colors.json generated file")
+    parser.add_argument("-z", "--zathura", nargs="?", \
+                        default=home + "/.config/zathura/", \
+                        help="Path to zathura's config file")
+
+    args = parser.parse_args()
+
+    # Read pywal's colors
+    colors = read_colors(args.path)
+
+    # Set zathura's theme
+    set_zathura_theme(colors, args.zathura)
+
+if __name__ == "__main__":
+    main()

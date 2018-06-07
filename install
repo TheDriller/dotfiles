@@ -40,3 +40,5 @@ ln -s ${BASEDIR}/.config/xfce4/terminal ~/.config/xfce4/
 # zathura config
 ln -s ${BASEDIR}/.config/zathura ~/.config/
 
+# oh-my-zsh themes
+ln -s ${BASEDIR}/.oh-my-zsh/themes ~/.oh-my-zsh/

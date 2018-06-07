@@ -21,7 +21,7 @@ xset -b
 POWERLEVEL9K_MODE="nerdfont-complete"
 
 # oh_my_zsh theme to use
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="jovial"
 
 # remove the user@host
 DEFAULT_USER="david"

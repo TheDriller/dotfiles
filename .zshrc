@@ -3,7 +3,7 @@
 (cat ~/.cache/wal/sequences &)
 
 # Path to your oh-my-zsh installation.
-  export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # add colorls to path (need to be installed via gem/ruby)
 export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
@@ -12,7 +12,7 @@ export PATH=$HOME/.gem/ruby/2.5.0/bin:$PATH
 export PATH=$HOME/.bin:$PATH
 
 # Call neofetch at the beginning
-neofetch
+#neofetch
 
 # Remove annoying system beep
 xset -b
@@ -21,7 +21,7 @@ xset -b
 POWERLEVEL9K_MODE="nerdfont-complete"
 
 # oh_my_zsh theme to use
-ZSH_THEME="jovial"
+ZSH_THEME="my-avit"
 
 # remove the user@host
 DEFAULT_USER="david"
@@ -34,7 +34,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # aliases
-alias ls="colorls"
+#alias ls="colorls"
 
 # Use wal, wal_zathura and wal_steam at once
 function wal_total() {

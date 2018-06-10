@@ -5,7 +5,8 @@
 # prompt characters
 # ❯ ➜ 
 setopt PROMPT_SUBST
-PROMPT='%F{blue}┌───%f$(_user_host) ${_current_dir} ${_return_status} $(git_prompt_info)
+PROMPT='
+%F{blue}┌───%f$(_user_host) ${_current_dir} ${_return_status} $(git_prompt_info)
 %F{blue}└─►%f%F{red} '
 
 PROMPT2='%(?.%F{blue}.%F{red})◀%{$reset_color%} '

@@ -1,35 +1,35 @@
 
-set default-fg "#13788B"
-set default-bg "#0D363F"
+set default-fg "#815688"
+set default-bg "#05040A"
 
-set recolor-darkcolor  "#13788B"
-set recolor-lightcolor "#0D363F"
+set recolor-darkcolor  "#815688"
+set recolor-lightcolor "#05040A"
 
-set statusbar-fg "#13788B"
-set statusbar-bg "#0D363F"
+set statusbar-fg "#815688"
+set statusbar-bg "#05040A"
 
-set inputbar-fg "#13788B"
-set inputbar-bg "#0D363F"
+set inputbar-fg "#815688"
+set inputbar-bg "#05040A"
 
-set completion-fg "#0D363F"
-set completion-bg "#13788B"
+set completion-fg "#05040A"
+set completion-bg "#815688"
 
-set completion-group-fg "#13788B"
-set completion-group-bg "#0D363F"
+set completion-group-fg "#815688"
+set completion-group-bg "#05040A"
 
-set completion-highlight-fg "#13788B"
-set completion-highlight-bg "#0D363F"
+set completion-highlight-fg "#815688"
+set completion-highlight-bg "#05040A"
 
-set highlight-color "#0D363F"
-set highlight-active-color "#13788B"
+set highlight-color "#05040A"
+set highlight-active-color "#815688"
 
-set notification-fg "#13788B"
-set notification-bg "#0D363F"
+set notification-fg "#815688"
+set notification-bg "#05040A"
 
-set notification-error-bg "#0D363F"
-set notification-error-fg "#13788B"
+set notification-error-bg "#05040A"
+set notification-error-fg "#815688"
 
-set notification-warning-bg "#0D363F"
-set notification-warning-fg "#13788B"
+set notification-warning-bg "#05040A"
+set notification-warning-fg "#815688"
 
 set recolor

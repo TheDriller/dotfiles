@@ -34,7 +34,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # aliases
-#alias ls="colorls"
+alias ls="colorls"
+
 
 # Use wal, wal_zathura and wal_steam at once
 function wal_total() {

@@ -42,3 +42,6 @@ ln -s ${BASEDIR}/.config/zathura ~/.config/
 
 # oh-my-zsh themes
 ln -s ${BASEDIR}/.oh-my-zsh/themes ~/.oh-my-zsh/
+
+# vim config
+ln -s ${BASEDIR}/.vim/.vimrc ~/.vim/.vimrc

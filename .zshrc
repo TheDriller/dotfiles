@@ -34,7 +34,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # aliases
-alias ls="colorls"
+#alias ls="colorls"
 
 
 # Use wal, wal_zathura and wal_steam at once
@@ -46,6 +46,7 @@ function wal_total() {
 	    wal_zathura
 	    wal_steam -w
 	    oomoxify-cli ~/.cache/wal/colors-oomox
+   	    cp $1 ~/.dotfiles/.i3/lock_screen.png
 	fi
 }
 
@@ -58,6 +59,7 @@ function wal_total_light() {
 	    wal_zathura
 	    wal_steam -w
 	    oomoxify-cli ~/.cache/wal/colors-oomox
+	    cp $1 ~/.dotfiles/.i3/lock_screen.png
 	fi
 }
 

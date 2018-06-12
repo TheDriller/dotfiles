@@ -288,7 +288,9 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 #exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 -locker blurlock
+
+# custom locker
+exec --no-startup-id xautolock -time 30 -cornersize 30 -detectsleep -corners ---- -locker 'i3lock -i ~/.i3/lock_screen.png'
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 

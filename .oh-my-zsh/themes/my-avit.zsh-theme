@@ -5,21 +5,38 @@
 # prompt characters
 # ❯ ➜ 
 setopt PROMPT_SUBST
-PROMPT='
-%F{blue}┌───%f$(_user_host) ${_current_dir} ${_return_status} $(git_prompt_info)
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+PROMPT='%F{blue}┌───%f$(_user_host) ${_current_dir} ${_return_status} $(virtualenv_prompt_info) $(git_prompt_info)
 %F{blue}└─►%f%F{red} '
 
 PROMPT2='%(?.%F{blue}.%F{red})◀%{$reset_color%} '
 
 RPROMPT='%{$(echotc UP 1)%} $(git_prompt_status) ${_return_status}%{$(echotc DO 1)%}'
 
-local _current_dir="$FX[bold]%{$fg_bold[blue]%}%2~%{$reset_color%} "
+local _current_dir="$FX[bold]%{$fg_bold[blue]%}%2~%{$reset_color%}"
 local _return_status="$FX[bold]%{$fg_bold[red]%}%(?..⍉)%{$reset_color%}"
 local _hist_no="$FX[bold]%{$fg[grey]%}%h%{$reset_color%}"
 
 # Use to replace path / with another character (ex: ►)
 function _current_dir_arrow() {
 	echo "$FX[bold]%{$fg_bold[blue]%}$(pwd | sed 's_/home/david_~_' | sed 's/\//'$fg_bold[blue]' ► '$fg_bold[blue]'/g')"
+}
+
+ZSH_THEME_VIRTUAL_ENV_PROMPT_PREFIX="["
+ZSH_THEME_VIRTUAL_ENV_PROMPT_SUFFIX="]"
+
+function virtualenv_prompt_info() {
+    if [ -n "$VIRTUAL_ENV" ]; then
+        if [ -f "$VIRTUAL_ENV/__name__" ]; then
+            local name=`cat $VIRTUAL_ENV/__name__`
+        elif [ `basename $VIRTUAL_ENV` = "__" ]; then
+            local name=$(basename $(dirname $VIRTUAL_ENV))
+        else
+            local name=$(basename $VIRTUAL_ENV)
+        fi
+        echo "%F{red}$ZSH_THEME_VIRTUAL_ENV_PROMPT_PREFIX$name$ZSH_THEME_VIRTUAL_ENV_PROMPT_SUFFIX%{$reset_color%}"
+    fi
 }
 
 function _current_dir() {
